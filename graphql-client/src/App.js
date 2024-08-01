@@ -1,10 +1,11 @@
+// src/App.js
 import React from 'react';
-import './App.css';
+import Page from './Page'; // Import the Page component correctly
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to my React app!</h1>
+    <div>
+      <Page />
     </div>
   );
 }
