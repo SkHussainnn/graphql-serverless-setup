@@ -1,0 +1,32 @@
+service: graphql-server
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+    - dynamodb:Query
+    - dynamodb:Scan
+    - dynamodb:PutItem
+    - dynamodb:UpdateItem
+    Resource: "*"
+
+functions:
+  graphql:
+    handler: handler.graphql # Adjust to match the actual output file name
+    events:
+    - http:
+        path: graphql
+        method: post
+        cors: true
+
+plugins:
+- serverless-webpack
+- serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: './webpack.config.js'
+    includeModules: true
