@@ -1,4 +1,6 @@
+// src/App.js
 import React from 'react';
+<<<<<<< HEAD
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client';
 
 const client = new ApolloClient({
@@ -26,6 +28,15 @@ function App() {
     <ApolloProvider client={client}>
       <YourComponent />
     </ApolloProvider>
+=======
+import Page from './Page'; // Import the Page component correctly
+
+function App() {
+  return (
+    <div>
+      <Page />
+    </div>
+>>>>>>> origin/main
   );
 }
 
